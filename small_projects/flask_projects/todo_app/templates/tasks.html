@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="main-container">
+            <div class="title-container">
+                <center>
+                    <div class="title-container-inne">
+                        <h1>Tasks</h1>
+                    </div>
+                </center>
+            </div>
+            <center>
+                <div class="tasks-container">
+                    {% for task in tasks %}
+                        <div class="task">
+                            <p>
+                                <strong>{{task[1]}}</strong>
+                            </p>
+                            <div class="delete-container">
+                                <button class="delete-button" onclick="delete_task('{{task[2]}}')">Delete</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </center>
+        </div>
+        <div class="new-task-container">
+            <div class="new-task-container-inner">
+                <strong>Create a new task</strong>
+                <div class="input-inner">
+                    <div class="input-text-inner">
+                        <input type="text" placeholder="Enter task..." id="task-content">
+                        <button class="submit" id="post-button">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/tasks.js') }}"></script>
+{% endblock %}

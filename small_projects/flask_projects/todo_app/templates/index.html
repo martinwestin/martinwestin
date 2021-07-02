@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p><strong>{{msg}}</strong></p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="main-container">
+        <div class="title-container">
+            <div class="title-container-inner">
+                <h1>Welcome</h1>
+            </div>
+        </div>
+        <br>
+        <div class="form-container">
+            <div class="create-account-container">
+                <form action="/" method="POST">
+                    <h2>Create Account</h2>
+                    <input type="text" placeholder="Enter a username..." name="username">
+                    <input type="password" placeholder="Enter a password..." name="password">
+                    <input type="password" placeholder="Confirm password..." name="confirm">
+                    <p>
+                        <input type="submit" value="Create Account">
+                    </p>
+                </form>
+            </div>
+            <div class="login-container">
+                <form action="/" method="POST">
+                    <h2>Login</h2>
+                    <input type="text" placeholder="Enter username..." name="login_username">
+                    <input type="password" placeholder="Enter password..." name="login_password">
+                    <p>
+                        <input type="submit" value="Login">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,48 @@
+* {
+    color: #234675;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+    margin: auto;
+    height: 25vw;
+    width: 35vw;
+    background-color: rgb(116, 178, 232);
+    border-radius: 10px;
+    margin-top: 5vw;
+    padding: 1vw;
+}
+
+.title-container {
+    width: 12vw;
+    height: 4vw;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 0.5vw;
+}
+
+.create-account-container {
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin-top: 1vw;
+    padding: 0.5vw;
+    flex: 0.5;
+}
+
+.login-container {
+    flex: 0.5;
+    margin-left: 1vw;
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding: 0.5vw;
+    margin-top: 1vw;
+}
+
+.form-container {
+    display: flex;
+}
+
+.submit {
+    background-color: aliceblue;
+    border-radius: 5px;
+}

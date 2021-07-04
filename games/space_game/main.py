@@ -1,5 +1,4 @@
 import pygame
-from pygame import key
 pygame.font.init()
 
 
@@ -17,7 +16,7 @@ FPS = 60
 SPACESHIP_DIMENSIONS = (55, 40)
 VEL = 5
 MAX_BULLETS = 5
-BULLET_VEL = 10
+BULLET_VEL = 10 
 
 HEALTH_FONT = pygame.font.SysFont("comicsans", 40)
 
@@ -124,11 +123,11 @@ def main():
                     win = None
                     red_health = 10
                     yellow_health = 10
-                if event.key == pygame.K_LCTRL and len(yellow_bullets) < MAX_BULLETS:
+                if event.key == pygame.K_LSHIFT and len(yellow_bullets) < MAX_BULLETS:
                     bullet = pygame.Rect(yellow.x + yellow.width, yellow.y + yellow.height // 2 - 2, 10, 5)
                     yellow_bullets.append(bullet)
 
-                if event.key == pygame.K_RCTRL and len(red_bullets) < MAX_BULLETS:
+                if event.key == pygame.K_RSHIFT and len(red_bullets) < MAX_BULLETS:
                     bullet = pygame.Rect(red.x, red.y + red.height // 2 - 2, 10, 5)
                     red_bullets.append(bullet)
             
